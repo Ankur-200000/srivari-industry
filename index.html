@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srivari Industry | Packaging Solutions</title>
+    <link href="./css/output.css" rel="stylesheet">
+    <link rel="preload" href="./fonts/Inter_28pt-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+</head>
+<body class="font-sans text-slate-800 relative min-h-screen bg-slate-50 overflow-x-hidden">
+
+    <canvas id="assembly-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/40 shadow-sm relative">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="./index.html" class="flex items-center gap-3">
+                <img src="./images/srivari-logo.webp" alt="Srivari Industry Logo" width="250" height="250" class="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform duration-300 hover:scale-110">
+                <span class="text-xl font-black tracking-tight text-slate-800">SRIVARI <span class="text-amber-600">INDUSTRY</span></span>
+            </a>
+
+            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-600">
+                <a href="./index.html#about" class="hover:text-amber-600 transition-colors">About Us</a>
+                <a href="./index.html#quality" class="hover:text-amber-600 transition-colors">Quality Policy</a>
+                <a href="./index.html#products" class="hover:text-amber-600 transition-colors">Products</a>
+                <a href="./index.html#faq" class="hover:text-amber-600 transition-colors">FAQs</a>
+                <a href="./index.html#contact" class="hover:text-amber-600 transition-colors">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn" 
+                    aria-label="Toggle navigation menu" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu"
+                    class="md:hidden text-slate-800 hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded p-1 transition-colors">
+                <svg aria-hidden="true" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-2xl">
+            <div class="flex flex-col px-8 py-6 space-y-2 text-center font-black text-slate-800 text-lg">
+                <a href="./index.html#about" class="mobile-link hover:text-amber-600 transition-colors py-3 border-b border-slate-200">About Us</a>
+                <a href="./index.html#quality" class="mobile-link hover:text-amber-600 transition-colors py-3 border-b border-slate-200">Quality Policy</a>
+                <a href="./index.html#products" class="mobile-link hover:text-amber-600 transition-colors py-3 border-b border-slate-200">Products</a>
+                <a href="./index.html#faq" class="mobile-link hover:text-amber-600 transition-colors py-3 border-b border-slate-200">FAQs</a>
+                <a href="./index.html#contact" class="mobile-link hover:text-amber-600 transition-colors py-3 border-b border-slate-200">Contact</a>
+                <a href="./legal.html" class="mobile-link hover:text-amber-600 transition-colors py-3 text-sm font-bold text-slate-500 uppercase tracking-widest mt-4">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 w-full flex flex-col items-center py-12 space-y-20">
+        
+        <section class="flex flex-col items-center justify-center min-h-[70vh] text-center w-full">
+            <div class="w-[85%] bg-white/70 backdrop-blur-lg border border-white/40 shadow-2xl rounded-3xl p-10 md:p-16">
+                <span class="text-amber-600 font-bold tracking-widest uppercase text-sm mb-4 block">Precision Logistics</span>
+                <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tight">Protecting Your Products,<br> Delivering Your Promise.</h1>
+                <p class="text-lg text-slate-600 mb-10 max-w-3xl mx-auto">We engineer high-durability packaging solutions for modern manufacturing.</p>
+                
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="#products" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-xl transition-colors duration-300 shadow-lg">Explore Our Products</a>
+                    <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-10 rounded-xl transition-colors duration-300 shadow-lg">Enquire Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12 scroll-mt-[120px]">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white/80 backdrop-blur-sm border border-white/50 shadow-lg rounded-2xl p-8">
+                    <h2 class="text-3xl font-black mb-6 flex items-center gap-3">
+                        <span class="p-2 bg-amber-100 rounded-lg text-amber-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </span>
+                        Vision
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed font-medium">
+                        To be an admired creator of sustainable, high-performance packaging solutions, recognized for quality craftsmanship, responsible growth, and lasting customer trust.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 text-white shadow-lg rounded-2xl p-8">
+                    <h2 class="text-3xl font-black mb-6 flex items-center gap-3 text-amber-500">
+                        <span class="p-2 bg-white/10 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </span>
+                        Mission
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Our mission is to provide seamless packaging experiences, by blending advanced manufacturing with a deep commitment to customer success. We are committed to empowering our team, exceeding customer expectations, and advancing sustainable manufacturing practices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-slate-900">Our Values</h2>
+                <p class="text-slate-700 mt-4 max-w-2xl mx-auto font-medium">The core principles that drive every box we build.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-10">
+                
+                <div tabindex="0" aria-label="Core Value: Ethics and Integrity" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2">Ethics & Integrity</h3>
+                            <p class="text-slate-500 text-sm">Conduct every action with honesty, transparency, and fairness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div tabindex="0" aria-label="Core Value: Accountability" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2">Accountability</h3>
+                            <p class="text-slate-500 text-sm">Honour commitments and take full responsibility for outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div tabindex="0" aria-label="Core Value: Quality Excellence" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2">Quality Excellence</h3>
+                            <p class="text-slate-500 text-sm">Strict quality standards and precision in every product reflection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div tabindex="0" aria-label="Core Value: Customer First" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2">Customer First</h3>
+                            <p class="text-slate-500 text-sm">Long-term relationships based on active listening and trust.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div tabindex="0" aria-label="Core Value: Environmental Stewardship" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2">Environmental</h3>
+                            <p class="text-slate-500 text-sm">Supporting sustainable practices and wise resource usage.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white/80 backdrop-blur-sm border border-white/50 shadow-lg rounded-2xl p-8">
+                    <h2 class="text-3xl font-black mb-6">Who We Are</h2>
+                    <p class="text-slate-600 mb-6">Built on a foundation of industrial expertise and modern logistics, Srivari Industry delivers structural integrity in every container.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-200">
+                        <div>
+                            <span class="block text-3xl font-black text-amber-600">[XX]+</span>
+                            <span class="text-sm font-bold text-slate-500 uppercase tracking-wide">Strong Workforce</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-black text-amber-600">[UVP]</span>
+                            <span class="text-sm font-bold text-slate-500 uppercase tracking-wide">Competitive Edge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-slate-900 text-white shadow-lg rounded-2xl p-8">
+                        <h2 class="text-2xl font-black mb-4">Production Capacity</h2>
+                        <p class="text-slate-300">Operating at high volume across our facilities to ensure timely delivery for every industrial order.</p>
+                    </div>
+                    <div class="bg-amber-500 text-white shadow-lg rounded-2xl p-8">
+                        <h2 class="text-2xl font-black mb-4">Certifications & Quality</h2>
+                        <p class="text-amber-50">Adhering to strict industry standards to ensure every product reflects precision and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quality" class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12 scroll-mt-[120px]">
+            <div class="grid lg:grid-cols-5 gap-10">
+                
+                <div class="lg:col-span-3 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 rounded-full text-amber-700 text-xs font-bold uppercase tracking-widest">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.9L9.03 9.127L15.9 4.9L9.03 0.673L2.166 4.9ZM0 8.013V14.913L6.864 19.14L6.864 12.24L0 8.013ZM11.196 19.14L18.06 14.913V8.013L11.196 12.24V19.14Z" clip-rule="evenodd"></path></svg>
+                        Quality Assurance
+                    </div>
+                    
+                    <h2 class="text-4xl font-black text-slate-900 leading-tight">
+                        Our Policy: Precision, <br>
+                        <span class="text-amber-600">Zero-Defect</span> Reliability.
+                    </h2>
+
+                    <div class="prose prose-slate max-w-none">
+                        <p class="text-lg text-slate-600 leading-relaxed font-medium">
+                            We are committed to delivering reliable, high-performance packaging that consistently meets customer requirements and adheres to all applicable standards. Our goal is to ensure <span class="text-slate-900 font-bold underline decoration-amber-500 underline-offset-4">zero-defect output</span>, on-time delivery, and continuous improvement.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 pt-6">
+                        <div class="flex gap-4 p-4 bg-white/60 rounded-xl border border-white/40">
+                            <div class="text-amber-600 shrink-0 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Disciplined Controls</h4>
+                                <p class="text-xs text-slate-500 mt-1">Advanced technologies and rigorous quality checks at every stage.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-white/60 rounded-xl border border-white/40">
+                            <div class="text-amber-600 shrink-0 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Responsible Growth</h4>
+                                <p class="text-xs text-slate-500 mt-1">Minimizing environmental impact through sustainable material usage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <div class="bg-slate-900 rounded-3xl p-8 shadow-2xl relative overflow-hidden h-full">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
+                        
+                        <h3 class="text-white text-2xl font-black mb-6">Management Commitment</h3>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 p-1 bg-amber-500 rounded-md text-slate-900 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-snug">Implementing, maintaining, and continually improving our QMS.</p>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 p-1 bg-amber-500 rounded-md text-slate-900 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-snug">Establishing measurable objectives reviewed regularly for effectiveness.</p>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 p-1 bg-amber-500 rounded-md text-slate-900 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-snug">Providing resources, training, and technology for high quality standards.</p>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 p-1 bg-amber-500 rounded-md text-slate-900 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-snug">Cultivating a culture of ownership, transparency, and ethical conduct.</p>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 p-1 bg-amber-500 rounded-md text-slate-900 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-snug">Promoting environmentally responsible practices in operations.</p>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 pt-8 border-t border-white/10 italic text-slate-400 text-xs">
+                            "Management shall lead by example, ensuring quality remains a non-negotiable priority."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12 scroll-mt-[120px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-slate-900">Our Products</h2>
+                <p class="text-slate-700 mt-4 max-w-2xl mx-auto font-medium">High-durability corrugated solutions engineered for industrial resilience. Available in various flute profiles and ply configurations.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-10">
+                
+                <div tabindex="0" aria-label="Product: 3-Ply Corrugated Boxes for lightweight shipping" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2 tracking-tight text-center">3-Ply Boxes</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-4">Ideal for lightweight to medium items. Consists of a single fluted medium sandwiched between two liners for everyday shipping reliability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div tabindex="0" aria-label="Product: 5-Ply Corrugated Boxes for heavy duty industrial use" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2 tracking-tight text-center">5-Ply Boxes</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-4">Double-wall protection designed for heavy-duty industrial components. Offers superior stacking strength and puncture resistance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div tabindex="0" aria-label="Product: 7-Ply Corrugated Boxes for maximum protection and export" class="relative w-80 h-80 perspective-1000 box-container box-50 cursor-pointer group focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-8 rounded-sm">
+                    <div class="absolute inset-0 box-interior rounded-sm"></div>
+                    <div class="flap flap-left border-r border-black/10"></div>
+                    <div class="flap flap-right border-l border-black/10"></div>
+                    <div class="flap flap-top border-b border-black/20"></div>
+                    <div class="flap flap-bottom border-t border-black/20"></div>
+                    <div class="tape border-y border-black/10 shadow-sm"></div>
+
+                    <div class="absolute inset-0 z-50 flex items-center justify-center p-5 pointer-events-none">
+                        <div class="bg-white w-full rounded shadow-md p-6 pointer-events-auto border border-gray-200 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:scale-105 group-hover:shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-20"></div>
+                            <h3 class="text-slate-800 font-black text-xl mb-2 tracking-tight text-center">7-Ply Boxes</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-4">Triple-wall construction for maximum protection. The benchmark for high-value exports and extremely heavy industrial machinery.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="faq" class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12 scroll-mt-[120px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-slate-900">Frequently Asked Questions</h2>
+                <p class="text-slate-700 mt-4 max-w-2xl mx-auto font-medium">Everything you need to know about our industrial packaging solutions.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                
+                <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                        <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">What industries do you serve?</span>
+                        <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                        We provide high-durability packaging in the manufacturing sectors, and can cater to <strong>Pharmaceuticals</strong> and <strong>Food & Beverage</strong> companies, ensuring compliance with hygiene and safety standards.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                        <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Which ply variations do you manufacture?</span>
+                        <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                        We specialize in <strong>3-Ply, 5-Ply, and 7-Ply</strong> corrugated boxes. These range from lightweight shipping solutions to heavy-duty industrial-grade containers for maximum machine protection. We provide all flute configurations for our boxes as well.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                        <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">What is the lead time for bulk orders?</span>
+                        <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                        Standard lead times vary based on volume, but we typically fulfill bulk orders within agreed business days. Our optimized production line allows for faster turnaround on recurring supply contracts.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                        <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Do you offer customized sizes and branding?</span>
+                        <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                        Yes, we engineer bespoke packaging tailored to your product dimensions and can incorporate high-quality printing for brand visibility and logistical marking.
+                    </div>
+                </div>
+
+                <div id="extra-faqs" class="hidden space-y-4 mt-4">
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Are your boxes sustainable?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Absolutely. We use 100% recyclable materials and prioritize responsible sourcing to minimize environmental impact while maintaining structural integrity.
+                        </div>
+                    </div>
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">What is the difference between A, B, C, and E flutes?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Flutes determine the thickness and strength of the box wall. <strong>A-Flute</strong> offers the best cushioning, <strong>B-Flute</strong> provides excellent crush resistance and foldability, <strong>C-Flute</strong> is the standard for versatile shipping, and <strong>E-Flute</strong> is a thin profile ideal for high-quality retail printing. We provide all flute configurations for your boxes as per your needs.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">How do you ensure the bursting strength of your boxes?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Our manufacturing process includes rigorous in-house testing, specifically <strong>Bursting Strength Tests (BST)</strong> and <strong>Edge Crush Tests (ECT)</strong>, to guarantee your packaging withstands vertical stacking pressure and transit handling without failing.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Are your boxes suitable for cold storage or refrigerated transport?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Yes. For our Food & Beverage and Pharmaceutical clients, we utilize specialized moisture-resistant liners and wet-strength adhesives that maintain structural integrity even in highly refrigerated or freezing environments.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Do you provide ISO-certified packaging for hazardous materials?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            We can engineer heavy-duty 5-ply and 7-ply configurations designed to meet stringent ISO certification standards for the safe transport of chemicals and hazardous goods.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">What is the minimum order quantity (MOQ) for custom runs?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            While our production line is optimized for high-volume bulk orders, we offer flexible MOQs depending on the complexity, size, and printing requirements of your specific box design. Contact our sales team for an exact volume breakdown.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Can you match specific GSM requirements for inner and outer liners?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Absolutely. We source a wide variety of kraft and duplex papers, allowing us to strictly adhere to your precise Grams per Square Meter (GSM) specifications for every layer of the corrugated board.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Do you offer Edge Crush Test (ECT) certified boxes?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Yes, many modern logistics operations prefer ECT ratings over traditional Mullen (Burst) tests because it directly measures stacking strength. We supply and certify boxes rated from 32 ECT up to heavy-duty 90+ ECT depending on your palletizing needs.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">How do you handle moisture resistance in humid climates?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Corrugated material can naturally absorb moisture, which compromises strength. We combat this by offering specialized coatings, varnishes, and high-quality virgin kraft liners that repel moisture and maintain box rigidity during monsoon seasons or coastal transit.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Are samples available for testing before a bulk commitment?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Yes. We encourage prototype testing. We will manufacture a limited run of samples based on your exact specifications so your QA team can perform drop tests, fit tests, and transit simulations before you sign off on a bulk run.
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl bg-white/80 overflow-hidden transition-all duration-300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left group focus:outline-none focus:bg-amber-50/50">
+                            <span class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition-colors">Do you provide 'Just-in-Time' (JIT) delivery for recurring contracts?</span>
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-amber-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                            Yes. Empty boxes take up significant warehouse space. For our long-term manufacturing partners, we synchronize with your production schedules to provide Just-in-Time inventory fulfillment, reducing your overhead and storage costs.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10">
+                    <button id="view-all-faqs" class="text-amber-600 font-bold hover:text-amber-700 transition-colors flex items-center gap-2 mx-auto uppercase tracking-widest text-sm">
+                        <span>View All Questions</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="w-[85%] bg-white/40 backdrop-blur-md border border-white/30 shadow-2xl rounded-3xl p-8 md:p-12 mb-20 scroll-mt-[120px]">
+            <div class="grid md:grid-cols-2 gap-10">
+                
+                <div class="bg-white/80 backdrop-blur-sm border border-white/50 shadow-lg rounded-2xl p-8">
+                    <h2 class="text-3xl font-black mb-6">Logistics & Coverage</h2>
+                    <p class="text-slate-600 mb-4"><strong>Service Areas:</strong> Karnataka and Tamil Nadu.</p>
+                    <p class="text-slate-600 mb-4"><strong>Delivery Fees:</strong> [Delivery fee structure].</p>
+                    <p class="text-slate-600"><strong>Trusted By:</strong> Crown, [Client 2], and more.</p>
+                </div>
+
+                <div class="bg-amber-500 text-white shadow-lg rounded-2xl p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-20 pointer-events-none">
+                        <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <h2 class="text-3xl font-black mb-6 relative z-10">Get in Touch</h2>
+                    <div class="space-y-4 relative z-10 text-amber-950">
+                        <p><strong>Enquiries:</strong> svi.062018@gmail.com </p>
+                        <p><strong>Factory Manager:</strong> Neeraj Kiran Reddy</p>
+                        <hr class="border-amber-400 my-4">
+                        <p><strong>Leadership:</strong> Billapura Narayanareddy - <a href="#" class="underline hover:text-white transition-colors">LinkedIn</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800 relative z-10">
+        <div class="w-[85%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <img src="./images/srivari-logo.webp" alt="Srivari Packing Logo" width="250" height="250" class="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform duration-300 hover:scale-110">
+                    <span class="text-xl font-black tracking-tight text-white uppercase">Srivari <span class="text-amber-500">Industry</span></span>
+                </div>
+                <p class="text-sm leading-relaxed max-w-xs">
+                    Packing Developers specializing in high-performance industrial solutions and sustainable manufacturing practices.
+                </p>
+                <div class="pt-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-500 block mb-2">GST Registration</span>
+                    <span class="text-amber-500 font-mono font-bold text-sm">29AEPPV1407D1ZC</span>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm">Contact Details</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-amber-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Sy no 21/4Ll, Exide Road, Billapura,<br>Sarjapura Hobli, Anekal Taluk,<br>Bangalore - 562125</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <div class="flex flex-col">
+                            <span>+91 99862 40697</span>
+                            <span>+91 93862 40697</span>
+                            <span>+91 77951 09127</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm">Navigation</h4>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <a href="#" class="hover:text-amber-500 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-amber-500 transition-colors">About Us</a>
+                    <a href="#quality" class="hover:text-amber-500 transition-colors">Quality Policy</a>
+                    <a href="#products" class="hover:text-amber-500 transition-colors">Products</a>
+                    <a href="./index.html#faq" class="hover:text-amber-500 transition-colors">FAQs</a>
+                    <a href="#contact" class="hover:text-amber-500 transition-colors">Contact</a>
+                    <a href="./legal.html" class="hover:text-amber-500 transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="w-[85%] mx-auto pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+            <p>&copy; 2026 Srivari Industry. All rights reserved.</p>
+            <p class="text-slate-500">Website developed by <a href="https://salmonattitude.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-500 transition-colors underline decoration-slate-700 underline-offset-4">Salmon Attitude</a>.</p>
+            <p class="uppercase tracking-widest font-bold text-slate-600 italic">Packing Developers</p>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

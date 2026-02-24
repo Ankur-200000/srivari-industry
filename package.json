@@ -2,11 +2,11 @@
   "name": "srivari-packing-web",
   "version": "1.0.0",
   "scripts": {
-    "clean": "rimraf dist",
-    "dev": "./tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch",
-    "build:css": "./tailwindcss -i ./src/input.css -o ./dist/css/output.css --minify",
-    "build:js": "terser src/js/script.src.js -o dist/js/script.js -c -m",
-    "copy-assets": "cpr index.html dist/index.html && cpr legal.html dist/legal.html && cpr 404.html dist/404.html && cpr images dist/images && cpr fonts dist/fonts && cpr icons dist/icons",
+    "clean": "rimraf docs",
+    "dev": "./tailwindcss -i ./src/input.css -o ./docs/css/output.css --watch",
+    "build:css": "./tailwindcss -i ./src/input.css -o ./docs/css/output.css --minify",
+    "build:js": "terser src/js/script.src.js -o docs/js/script.js -c -m",
+    "copy-assets": "cpr index.html docs/index.html && cpr legal.html docs/legal.html && cpr 404.html docs/404.html && cpr images docs/images && cpr fonts docs/fonts && cpr icons docs/icons",
     "build": "npm-run-all clean build:css build:js copy-assets"
   },
   "devDependencies": {
